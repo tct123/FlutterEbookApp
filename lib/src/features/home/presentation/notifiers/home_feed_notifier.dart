@@ -11,14 +11,14 @@ class HomeFeedNotifier extends _$HomeFeedNotifier {
   HomeFeedNotifier() : super();
 
   @override
-  Future<HomeFeedData> build() async {
+  Future<HomeFeedData> build() {
     state = const AsyncValue.loading();
     return _fetch();
   }
 
   Future<void> fetch() async {
     state = const AsyncValue.loading();
-    state = await AsyncValue.guard(() async => _fetch());
+    state = await AsyncValue.guard(() => _fetch());
   }
 
   Future<HomeFeedData> _fetch() async {

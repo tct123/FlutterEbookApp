@@ -43,7 +43,7 @@ class DownloadsScreen extends ConsumerWidget {
                           .deleteBook(book['id'] as String);
                     },
                     child: InkWell(
-                      onTap: () async {
+                      onTap: () {
                         final path = book['path'] as String;
                         final bookFile = File(path);
                         if (bookFile.existsSync()) {
