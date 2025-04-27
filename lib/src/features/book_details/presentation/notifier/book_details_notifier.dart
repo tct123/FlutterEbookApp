@@ -13,7 +13,7 @@ class BookDetailsNotifier extends _$BookDetailsNotifier {
   BookDetailsNotifier();
 
   @override
-  Future<CategoryFeed> build(String url) async {
+  Future<CategoryFeed> build(String url) {
     _bookDetailsRepository = ref.watch(bookDetailsRepositoryProvider);
     _url = url;
     return _fetch();

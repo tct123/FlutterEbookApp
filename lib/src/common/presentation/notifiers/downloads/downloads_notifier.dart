@@ -14,7 +14,7 @@ class DownloadsNotifier extends _$DownloadsNotifier {
   StreamSubscription<List<Map<String, dynamic>>>? _streamSubscription;
 
   @override
-  Future<List<Map<String, dynamic>>> build() async {
+  Future<List<Map<String, dynamic>>> build() {
     _repository = ref.watch(downloadsRepositoryProvider);
     _listen();
     return _repository.downloadList();

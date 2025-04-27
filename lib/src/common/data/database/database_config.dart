@@ -14,8 +14,7 @@ mixin DatabaseConfig {
     return database;
   }
 
-  static Future<void> init(StoreRef<dynamic, dynamic> store) async =>
-      _initDatabases(
+  static Future<void> init(StoreRef<dynamic, dynamic> store) => _initDatabases(
         databaseNames,
         store,
       );

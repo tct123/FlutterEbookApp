@@ -9,6 +9,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:iridium_reader_widget/views/viewers/epub_screen.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:share_plus_platform_interface/platform_interface/share_plus_platform.dart';
 
 @RoutePage()
 class BookDetailsScreen extends ConsumerStatefulWidget {
@@ -54,7 +55,7 @@ class _BookDetailsScreenState extends ConsumerState<BookDetailsScreen> {
                       ) !=
                       -1;
                   return IconButton(
-                    onPressed: () async {
+                    onPressed: () {
                       if (favorited) {
                         ref
                             .watch(favoritesNotifierProvider.notifier)
@@ -113,8 +114,11 @@ class _BookDetailsScreenState extends ConsumerState<BookDetailsScreen> {
   }
 
   void _share() {
-    Share.share('${widget.entry.title!.t} by ${widget.entry.author!.name!.t}'
-        'Read/Download ${widget.entry.title!.t} from ${widget.entry.link![3].href}.');
+    SharePlus.instance(
+      '${widget.entry.title!.t} by ${widget.entry.author!.name!.t}'
+              'Read/Download ${widget.entry.title!.t} from ${widget.entry.link![3].href}.'
+          as SharePlatform,
+    );
   }
 }
 

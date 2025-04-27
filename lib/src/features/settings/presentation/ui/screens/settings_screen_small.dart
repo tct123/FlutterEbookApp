@@ -101,7 +101,7 @@ class _SettingsScreenSmallState extends State<SettingsScreenSmall> {
     }
   }
 
-  Future<void> showAbout() async {
+  Future<void> showAbout() {
     return showDialog(
       context: context,
       builder: (_) {

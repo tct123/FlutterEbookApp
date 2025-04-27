@@ -46,14 +46,14 @@ class DownloadsLocalDataSourceImpl implements DownloadsLocalDataSource {
   }
 
   @override
-  Future<List<Map<String, dynamic>>> downloadList() async {
+  Future<List<Map<String, dynamic>>> downloadList() {
     return _store.query().getSnapshots(_database).then(
           (records) => records.map((record) => record.value).toList(),
         );
   }
 
   @override
-  Future<Map<String, dynamic>?> fetchBook(String id) async {
+  Future<Map<String, dynamic>?> fetchBook(String id) {
     Logman.instance.info(
       'Fetched book from downloads: $id',
     );

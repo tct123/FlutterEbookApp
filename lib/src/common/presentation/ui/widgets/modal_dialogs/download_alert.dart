@@ -29,7 +29,7 @@ class DownloadAlert extends ConsumerStatefulWidget {
     required String name,
     required String image,
     required String id,
-  }) async {
+  }) {
     return showDialog(
       barrierDismissible: false,
       context: context,

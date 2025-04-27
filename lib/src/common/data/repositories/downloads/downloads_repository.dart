@@ -47,12 +47,12 @@ class DownloadsRepositoryImpl extends DownloadsRepository {
   }
 
   @override
-  Future<List<Map<String, dynamic>>> downloadList() async {
+  Future<List<Map<String, dynamic>>> downloadList() {
     return localDataSource.downloadList();
   }
 
   @override
-  Future<Map<String, dynamic>?> fetchBook(String id) async {
+  Future<Map<String, dynamic>?> fetchBook(String id) {
     return localDataSource.fetchBook(id);
   }
 

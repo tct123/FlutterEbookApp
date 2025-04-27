@@ -16,13 +16,13 @@ class AppDio with DioMixin implements Dio {
     interceptors
       ..add(
         InterceptorsWrapper(
-          onRequest: (options, handler) async {
+          onRequest: (options, handler) {
             return handler.next(options);
           },
           onResponse: (response, handler) {
             return handler.next(response);
           },
-          onError: (DioException e, handler) async {
+          onError: (DioException e, handler) {
             return handler.next(e);
           },
         ),
@@ -74,6 +74,7 @@ class LogmanDioInterceptor extends Interceptor {
       headers: responseHeaders,
       body: response.data.toString(),
       receivedAt: receivedAt,
+      url: '',
     );
 
     _logman.networkResponse(responseRecord);
@@ -94,6 +95,7 @@ class LogmanDioInterceptor extends Interceptor {
       headers: responseHeaders,
       body: err.response?.data.toString(),
       receivedAt: DateTime.now(),
+      url: '',
     );
 
     _logman.networkResponse(responseRecord);
