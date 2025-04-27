@@ -1,6 +1,6 @@
 name: flutter_ebook_app
 description: A Flutter app for eBooks
-
+publish_to: none
 version: 1.0.4+8
 
 environment:
@@ -14,7 +14,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_icons:
-    git: https://github.com/jibiel/flutter-icons
+    git:
+      url: https://github.com/jibiel/flutter-icons.git
   flutter_web_plugins:
     sdk: flutter
   flutter_riverpod: ^2.3.6
