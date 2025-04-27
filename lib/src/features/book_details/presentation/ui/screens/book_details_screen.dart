@@ -114,10 +114,12 @@ class _BookDetailsScreenState extends ConsumerState<BookDetailsScreen> {
   }
 
   void _share() {
-    SharePlus.instance(
-      '${widget.entry.title!.t} by ${widget.entry.author!.name!.t}'
-              'Read/Download ${widget.entry.title!.t} from ${widget.entry.link![3].href}.'
-          as SharePlatform,
+    SharePlus.instance.share(
+      (
+        '${widget.entry.title!.t} by ${widget.entry.author!.name!.t}'
+                'Read/Download ${widget.entry.title!.t} from ${widget.entry.link![3].href}.'
+            as SharePlatform,
+      ) as ShareParams,
     );
   }
 }
