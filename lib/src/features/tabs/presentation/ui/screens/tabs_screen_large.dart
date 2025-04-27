@@ -37,8 +37,8 @@ class TabsScreenLarge extends ConsumerWidget {
                 },
                 labelType: NavigationRailLabelType.all,
                 useIndicator: true,
-                indicatorColor:
-                    context.theme.colorScheme.secondary.withOpacity(0.5),
+                indicatorColor: context.theme.colorScheme.secondary
+                    .withValues(alpha: 0.5), //withOpacity(0.5)
                 destinations: const <NavigationRailDestination>[
                   NavigationRailDestination(
                     icon: Icon(Feather.home),
